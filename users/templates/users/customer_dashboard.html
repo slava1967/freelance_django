@@ -1,0 +1,232 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Dashboard Container -->
+<div class="dashboard-container">
+
+    <!-- Dashboard Sidebar
+    ================================================== -->
+    <div class="dashboard-sidebar">
+        <div class="dashboard-sidebar-inner" data-simplebar>
+            <div class="dashboard-nav-container">
+
+                <!-- Responsive Navigation Trigger -->
+                <a href="#" class="dashboard-responsive-nav-trigger">
+					<span class="hamburger hamburger--collapse">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</span>
+                    <span class="trigger-title">Dashboard Navigation</span>
+                </a>
+
+                <!-- Navigation -->
+                <div class="dashboard-nav">
+                    <div class="dashboard-nav-inner">
+
+                        <ul data-submenu-title="Start">
+                            <li><a href="dashboard-messages.html"><i class="icon-material-outline-question-answer"></i>
+                                Messages <span class="nav-tag">2</span></a></li>
+                            <li><a href="dashboard-bookmarks.html"><i class="icon-material-outline-star-border"></i>
+                                Bookmarks</a></li>
+                            <li><a href="dashboard-reviews.html"><i class="icon-material-outline-rate-review"></i>
+                                Reviews</a></li>
+                        </ul>
+
+                        <ul data-submenu-title="Organize and Manage">
+                            <li class="active-submenu"><a href="#"><i class="icon-material-outline-business-center"></i>
+                                Jobs</a>
+                                <ul>
+                                    <li><a href="dashboard-manage-jobs.html">Manage Jobs <span class="nav-tag">3</span></a>
+                                    </li>
+                                    <li><a href="dashboard-manage-candidates.html">Manage Candidates</a></li>
+                                    <li><a href="dashboard-post-a-job.html">Post a Job</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="icon-material-outline-assignment"></i> Tasks</a>
+                                <ul>
+                                    <li><a href="dashboard-manage-tasks.html">Manage Tasks <span
+                                            class="nav-tag">2</span></a></li>
+                                    <li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
+                                    <li><a href="dashboard-my-active-bids.html">My Active Bids <span
+                                            class="nav-tag">4</span></a></li>
+                                    <li><a href="dashboard-post-a-task.html">Post a Task</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul data-submenu-title="Account">
+                            <li><a href="{% url 'profile' %}"><i class="icon-material-outline-settings"></i>Профиль</a>
+                            </li>
+                            <li><a href="index-logged-out.html"><i class="icon-material-outline-power-settings-new"></i>
+                                Выход</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- Navigation / End -->
+
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Sidebar / End -->
+
+
+    <!-- Dashboard Content
+    ================================================== -->
+    <div class="dashboard-content-container" data-simplebar>
+        <div class="dashboard-content-inner">
+
+            <!-- Dashboard Headline -->
+            <div class="dashboard-headline">
+                <h3>Привет, {{ user.username }}!</h3>
+                <span>Рады видеть тебя в кабинете КЛИЕНТА!</span>
+            </div>
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Dashboard Box -->
+                <div class="col-xl-12">
+                    <div class="dashboard-box margin-top-0">
+
+                        <!-- Headline -->
+                        <div class="headline">
+                            <h3><i class="icon-material-outline-business-center"></i> My Job Listings</h3>
+                        </div>
+
+                        <div class="content">
+                            <ul class="dashboard-box-list">
+                                <li>
+                                    <!-- Job Listing -->
+                                    <div class="job-listing">
+
+                                        <!-- Job Listing Details -->
+                                        <div class="job-listing-details">
+                                            <!-- Details -->
+                                            <div class="job-listing-description">
+                                                <h3 class="job-listing-title"><a href="#">Frontend React Developer</a>
+                                                    <span class="dashboard-status-button green">Pending Approval</span>
+                                                </h3>
+
+                                                <!-- Job Listing Footer -->
+                                                <div class="job-listing-footer">
+                                                    <ul>
+                                                        <li><i class="icon-material-outline-date-range"></i> Posted on
+                                                            10 July, 2018
+                                                        </li>
+                                                        <li><i class="icon-material-outline-date-range"></i> Expiring on
+                                                            10 August, 2018
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Buttons -->
+                                    <div class="buttons-to-right always-visible">
+                                        <a href="dashboard-manage-candidates.html" class="button ripple-effect"><i
+                                                class="icon-material-outline-supervisor-account"></i> Manage Candidates
+                                            <span class="button-info">0</span></a>
+                                        <a href="#" class="button gray ripple-effect ico" title="Edit"
+                                           data-tippy-placement="top"><i class="icon-feather-edit"></i></a>
+                                        <a href="#" class="button gray ripple-effect ico" title="Remove"
+                                           data-tippy-placement="top"><i class="icon-feather-trash-2"></i></a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <!-- Job Listing -->
+                                    <div class="job-listing">
+
+                                        <!-- Job Listing Details -->
+                                        <div class="job-listing-details">
+
+                                            <!-- Details -->
+                                            <div class="job-listing-description">
+                                                <h3 class="job-listing-title"><a href="#">Full Stack PHP Developer</a>
+                                                    <span class="dashboard-status-button yellow">Expiring</span></h3>
+
+                                                <!-- Job Listing Footer -->
+                                                <div class="job-listing-footer">
+                                                    <ul>
+                                                        <li><i class="icon-material-outline-date-range"></i> Posted on
+                                                            28 June, 2018
+                                                        </li>
+                                                        <li><i class="icon-material-outline-date-range"></i> Expiring on
+                                                            28 July, 2018
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Buttons -->
+                                    <div class="buttons-to-right always-visible">
+                                        <a href="dashboard-manage-candidates.html" class="button ripple-effect"><i
+                                                class="icon-material-outline-supervisor-account"></i> Manage Candidates
+                                            <span class="button-info">3</span></a>
+                                        <a href="#" class="button gray ripple-effect ico" title="Edit"
+                                           data-tippy-placement="top"><i class="icon-feather-edit"></i></a>
+                                        <a href="#" class="button gray ripple-effect ico" title="Remove"
+                                           data-tippy-placement="top"><i class="icon-feather-trash-2"></i></a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <!-- Job Listing -->
+                                    <div class="job-listing">
+
+                                        <!-- Job Listing Details -->
+                                        <div class="job-listing-details">
+
+                                            <!-- Details -->
+                                            <div class="job-listing-description">
+                                                <h3 class="job-listing-title"><a href="#">Node.js Developer</a> <span
+                                                        class="dashboard-status-button red">Expired</span></h3>
+
+                                                <!-- Job Listing Footer -->
+                                                <div class="job-listing-footer">
+                                                    <ul>
+                                                        <li><i class="icon-material-outline-date-range"></i> Posted on
+                                                            16 May, 2018
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Buttons -->
+                                    <div class="buttons-to-right always-visible">
+                                        <a href="dashboard-manage-candidates.html" class="button ripple-effect"><i
+                                                class="icon-material-outline-supervisor-account"></i> Manage Candidates
+                                            <span class="button-info">7</span></a>
+                                        <a href="#" class="button dark ripple-effect"><i
+                                                class="icon-feather-rotate-ccw"></i> Refresh</a>
+                                        <a href="#" class="button gray ripple-effect ico" title="Edit"
+                                           data-tippy-placement="top"><i class="icon-feather-edit"></i></a>
+                                        <a href="#" class="button gray ripple-effect ico" title="Remove"
+                                           data-tippy-placement="top"><i class="icon-feather-trash-2"></i></a>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Row / End -->
+        </div>
+    </div>
+    <!-- Dashboard Content / End -->
+
+</div>
+<!-- Dashboard Container / End -->
+{% endblock %}

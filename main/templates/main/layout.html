@@ -1,0 +1,187 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>{% block title %}{% endblock %}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+================================================== -->
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/colors/blue.css' %}">
+
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper-with-transparent-header">
+
+<!-- Header Container
+================================================== -->
+<header id="header-container" class="fullwidth">
+
+	<!-- Header -->
+	<div id="header">
+		<div class="container">
+
+			<!-- Left Side Content -->
+			<div class="left-side">
+
+				<!-- Logo -->
+				<div id="logo">
+					<a href="{% url 'home' %}"><img src="{% static 'main/images/logo2.png' %}" data-sticky-logo="images/logo.png" data-transparent-logo="images/logo2.png" alt=""></a>
+				</div>
+
+				<!-- Main Navigation -->
+				<nav id="navigation">
+					<ul id="responsive">
+
+						<li><a href="{% url 'home' %}" class="current">Главная</a></li>
+						<li><a href="{% url 'about' %}" class="current">О нас</a></li>
+					</ul>
+				</nav>
+				<div class="clearfix"></div>
+				<!-- Main Navigation / End -->
+
+			</div>
+			<!-- Right Side Content / End -->
+			<div class="right-side">
+
+				<nav id="navigation">
+					<ul id="responsive">
+
+						<li><a href="{% url 'login' %}" class="current">Вход</a></li>
+						<li><a href="{% url 'register' %}" class="current">Регистрация</a></li>
+					</ul>
+				</nav>
+<!--				<div class="clearfix"></div>-->
+
+				<!-- User Menu -->
+				<div class="header-widget">
+
+					<!-- Messages -->
+					<div class="header-notifications user-menu">
+						<div class="header-notifications-trigger">
+							<a href="#"><div class="user-avatar status-online"><img src="{% static 'main/images/user-avatar-small-01.jpg' %}" alt=""></div></a>
+						</div>
+
+						<!-- Dropdown -->
+						<div class="header-notifications-dropdown">
+
+							<!-- User Status -->
+							<div class="user-status">
+
+								<!-- User Name / Avatar -->
+								<div class="user-details">
+									<div class="user-avatar status-online"><img src="{% static 'main/images/user-avatar-small-01.jpg' %}" alt=""></div>
+									<div class="user-name">
+										{{ username }} <span>{{ role }}</span>
+									</div>
+								</div>
+
+								<!-- User Status Switcher -->
+								<div class="status-switch" id="snackbar-user-status">
+									<label class="user-online current-status">Online</label>
+									<label class="user-invisible">Invisible</label>
+									<!-- Status Indicator -->
+									<span class="status-indicator" aria-hidden="true"></span>
+								</div>
+						</div>
+
+						<ul class="user-menu-small-nav">
+							<li><a href="{% url 'freelancer' %}"><i class="icon-material-outline-dashboard"></i>Дашборд</a></li>
+							<li><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i>Профиль</a></li>
+							<li><a href="index-logged-out.html"><i class="icon-material-outline-power-settings-new"></i>Выйти</a></li>
+						</ul>
+
+						</div>
+					</div>
+
+				</div>
+				<!-- User Menu / End -->
+
+				<!-- Mobile Navigation Button -->
+				<span class="mmenu-trigger">
+					<button class="hamburger hamburger--collapse" type="button">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</span>
+
+			</div>
+			<!-- Right Side Content / End -->
+
+		</div>
+	</div>
+	<!-- Header / End -->
+
+</header>
+<div class="clearfix"></div>
+<!-- Header Container / End -->
+
+{% block content %}
+{% endblock %}
+
+<!-- Footer
+================================================== -->
+<div id="footer">
+
+
+
+
+
+	<!-- Footer Copyrights -->
+	<div class="footer-bottom-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					© 2024 <strong>Django Test</strong>. All Rights Reserved.
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer Copyrights / End -->
+
+</div>
+<!-- Footer / End -->
+
+</div>
+<!-- Wrapper / End -->
+<!-- Scripts
+================================================== -->
+<!--<script src="{% static 'main/js/jquery-3.3.1.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/jquery-migrate-3.0.0.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/mmenu.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/tippy.all.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/simplebar.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/bootstrap-slider.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/bootstrap-select.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/snackbar.js' %}"></script>-->
+<!--<script src="{% static 'main/js/clipboard.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/counterup.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/magnific-popup.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/slick.min.js' %}"></script>-->
+<!--<script src="{% static 'main/js/custom.js' %}"></script>-->
+
+<!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
+<script>
+// Snackbar for user status switcher
+$('#snackbar-user-status label').click(function() {
+	Snackbar.show({
+		text: 'Your status has been changed!',
+		pos: 'bottom-center',
+		showAction: false,
+		actionText: "Dismiss",
+		duration: 3000,
+		textColor: '#fff',
+		backgroundColor: '#383838'
+	});
+});
+
+
+
+</body>
+</html>
