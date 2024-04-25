@@ -27,8 +27,9 @@
                     <div class="dashboard-nav-inner">
 
                         <ul data-submenu-title="Start">
-                            <li><a href="{% url '{{ user.role }}' %}"><i class="icon-material-outline-dashboard"></i>
-                                Dashboard</a>
+                            <li><a href="{% url 'user_role' user.role %}"><i
+                                    class="icon-material-outline-dashboard"></i>
+                                Личный кабинет</a>
                             </li>
                             <li><a href="dashboard-messages.html"><i class="icon-material-outline-question-answer"></i>
                                 Messages <span class="nav-tag">2</span></a></li>
@@ -60,7 +61,7 @@
                         </ul>
 
                         <ul>
-                            <li><a href="index-logged-out.html"><i class="icon-material-outline-power-settings-new"></i>
+                            <li><a href="{% url 'home' %}"><i class="icon-material-outline-power-settings-new"></i>
                                 Выход</a></li>
                         </ul>
 

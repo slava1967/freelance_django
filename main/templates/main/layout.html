@@ -56,53 +56,8 @@
 						<li><a href="{% url 'register' %}" class="current">Регистрация</a></li>
 					</ul>
 				</nav>
-<!--				<div class="clearfix"></div>-->
+				<div class="clearfix"></div>
 
-				<!-- User Menu -->
-				<div class="header-widget">
-
-					<!-- Messages -->
-					<div class="header-notifications user-menu">
-						<div class="header-notifications-trigger">
-							<a href="#"><div class="user-avatar status-online"><img src="{% static 'main/images/user-avatar-small-01.jpg' %}" alt=""></div></a>
-						</div>
-
-						<!-- Dropdown -->
-						<div class="header-notifications-dropdown">
-
-							<!-- User Status -->
-							<div class="user-status">
-
-								<!-- User Name / Avatar -->
-								<div class="user-details">
-									<div class="user-avatar status-online"><img src="{% static 'main/images/user-avatar-small-01.jpg' %}" alt=""></div>
-									<div class="user-name">
-										{{ username }} <span>{{ role }}</span>
-									</div>
-								</div>
-
-								<!-- User Status Switcher -->
-								<div class="status-switch" id="snackbar-user-status">
-									<label class="user-online current-status">Online</label>
-									<label class="user-invisible">Invisible</label>
-									<!-- Status Indicator -->
-									<span class="status-indicator" aria-hidden="true"></span>
-								</div>
-						</div>
-
-						<ul class="user-menu-small-nav">
-							<li><a href="{% url 'freelancer' %}"><i class="icon-material-outline-dashboard"></i>Дашборд</a></li>
-							<li><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i>Профиль</a></li>
-							<li><a href="index-logged-out.html"><i class="icon-material-outline-power-settings-new"></i>Выйти</a></li>
-						</ul>
-
-						</div>
-					</div>
-
-				</div>
-				<!-- User Menu / End -->
-
-				<!-- Mobile Navigation Button -->
 				<span class="mmenu-trigger">
 					<button class="hamburger hamburger--collapse" type="button">
 						<span class="hamburger-box">
@@ -152,19 +107,19 @@
 <!-- Wrapper / End -->
 <!-- Scripts
 ================================================== -->
-<!--<script src="{% static 'main/js/jquery-3.3.1.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/jquery-migrate-3.0.0.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/mmenu.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/tippy.all.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/simplebar.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/bootstrap-slider.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/bootstrap-select.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/snackbar.js' %}"></script>-->
-<!--<script src="{% static 'main/js/clipboard.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/counterup.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/magnific-popup.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/slick.min.js' %}"></script>-->
-<!--<script src="{% static 'main/js/custom.js' %}"></script>-->
+<script src="{% static 'main/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'main/js/jquery-migrate-3.0.0.min.js' %}"></script>
+<script src="{% static 'main/js/mmenu.min.js' %}"></script>
+<script src="{% static 'main/js/tippy.all.min.js' %}"></script>
+<script src="{% static 'main/js/simplebar.min.js' %}"></script>
+<script src="{% static 'main/js/bootstrap-slider.min.js' %}"></script>
+<script src="{% static 'main/js/bootstrap-select.min.js' %}"></script>
+<script src="{% static 'main/js/snackbar.js' %}"></script>
+<script src="{% static 'main/js/clipboard.min.js' %}"></script>
+<script src="{% static 'main/js/counterup.min.js' %}"></script>
+<script src="{% static 'main/js/magnific-popup.min.js' %}"></script>
+<script src="{% static 'main/js/slick.min.js' %}"></script>
+<script src="{% static 'main/js/custom.js' %}"></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>
