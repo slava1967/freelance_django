@@ -42,18 +42,18 @@ def login(request):
 
 
 def freelancer(request):
-    return render(request, 'users/dashboard/freelancer.html', {'title': 'Личный кабинет фрилансера'})
+    return render(request, 'users/freelancer.html', {'title': 'Личный кабинет фрилансера'})
 
 
 def customer(request):
-    return render(request, 'users/dashboard/customer.html', {'title': 'Личный кабинет клиента'})
+    return render(request, 'users/customer.html', {'title': 'Личный кабинет клиента'})
 
 
 def get_user_role(request, user_role):
     if user_role == 'freelancer':
-        return render(request, 'users/dashboard/freelancer.html', {'title': 'Личный кабинет фрилансера'})
+        return render(request, 'users/freelancer.html', {'title': 'Личный кабинет фрилансера'})
     elif user_role == 'customer':
-        return render(request, 'users/dashboard/customer.html', {'title': 'Личный кабинет клиента'})
+        return render(request, 'users/customer.html', {'title': 'Личный кабинет клиента'})
 
 
 def profile(request):
