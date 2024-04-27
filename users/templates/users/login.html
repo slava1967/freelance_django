@@ -1,0 +1,62 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Titlebar
+================================================== -->
+<div id="titlebar" class="gradient">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <h2>Вход для пользователей</h2>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Page Content
+================================================== -->
+<div class="container">
+    <div class="row">
+        <div class="col-xl-5 offset-xl-3">
+
+
+            <div class="login-register-page">
+                <!-- Welcome Text -->
+                <div class="welcome-text">
+                    <h3>Рады видеть Вас вновь!</h3>
+                    <span>Ещё нет учетной записи? <a href="{% url 'register' %}">Зарегистрироваться!</a></span>
+                </div>
+
+                <!-- Form -->
+                <form method="post" id="login-form">
+                    {% csrf_token %}
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-outline-face"></i>
+                        {{ form.username }}
+                    </div>
+
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-outline-lock"></i>
+                        {{ form.password }}
+                    </div>
+                    <a href="#" class="forgot-password">Забыли пароль?</a>
+                    <button class="button full-width button-sliding-icon ripple-effect margin-top-10 margin-bottom-70"
+                            type="submit"
+                            form="login-form">Войти<i class="icon-material-outline-arrow-right-alt"></i></button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Spacer -->
+<div class="margin-top-70"></div>
+<!-- Spacer / End-->
+{% endblock %}

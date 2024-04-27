@@ -1,0 +1,79 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+<!-- Titlebar
+================================================== -->
+<div id="titlebar" class="gradient">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Регистрация</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Page Content
+================================================== -->
+<div class="container">
+    <div class="row">
+        <div class="col-xl-5 offset-xl-3">
+
+            <div class="login-register-page">
+                <!-- Welcome Text -->
+                <div class="welcome-text">
+                    <h3 style="font-size: 26px;">Зарегистрируйтесь!</h3>
+                    <span>Уже есть учетная запись? <a href="{% url 'login' %}">Войти!</a></span>
+                </div>
+
+                <!-- Form -->
+                <form method="post" id="register-account-form">
+                    {% csrf_token %}
+                    <div class="account-type">
+                        {% for choice in form.role %}
+                        <div>
+                            {{ choice }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-outline-face"></i>
+                        {{ form.username }}
+                    </div>
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-baseline-mail-outline"></i>
+                        {{ form.email}}
+                    </div>
+
+                    <div class="input-with-icon-left" title="Should be at least 8 characters long"
+                         data-tippy-placement="bottom">
+                        <i class="icon-material-outline-lock"></i>
+                        {{ form.password1 }}
+                    </div>
+
+                    <div class="input-with-icon-left">
+                        <i class="icon-material-outline-lock"></i>
+                        {{ form.password2 }}
+                    </div>
+                    <span class="text-error">{{ form.errors }}</span>
+                    <button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit">
+                        Зарегистрироваться
+                        <i class="icon-material-outline-arrow-right-alt"></i></button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Spacer -->
+<div class="margin-top-70"></div>
+<!-- Spacer / End-->
+
+{% endblock %}
