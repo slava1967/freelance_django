@@ -6,7 +6,7 @@
 FROM python:3.11.4-slim-buster as builder
 
 # set work directory
-WORKDIR /usr/src/freelance_django
+WORKDIR /usr/src/app
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -19,12 +19,12 @@ RUN apt-get update && \
 # lint
 RUN pip install --upgrade pip
 RUN pip install flake8==6.0.0
-COPY . /usr/src/freelance_django/
-RUN flake8 --ignore=E501,F401 freelance_django
+COPY . /usr/src/app/
+RUN flake8 --ignore=E501,F401 ./freelance_django
 
 # install python dependencies
 COPY ./requirements.txt .
-RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/freelance_django/wheels -r requirements.txt
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
 
 
 #########
@@ -44,12 +44,13 @@ RUN addgroup --system app && adduser --system --group app
 ENV HOME=/home/app
 ENV APP_HOME=/home/app/web
 RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/staticfiles
 WORKDIR $APP_HOME
 
 # install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends netcat
-COPY --from=builder /usr/src/freelance_django/wheels /wheels
-COPY --from=builder /usr/src/freelance_django/requirements.txt .
+COPY --from=builder /usr/src/app/wheels /wheels
+COPY --from=builder /usr/src/app/requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache /wheels/*
 

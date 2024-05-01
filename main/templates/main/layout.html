@@ -50,11 +50,17 @@
 			<div class="right-side">
 
 				<nav id="navigation">
+					{% if user.is_authenticated %}
+					<a class="nav-item nav-link" href="{% url 'logout' %}">
+						Выход<i class="fas fa-sign-out-alt"></i>
+					</a>
+					{% else %}
 					<ul id="responsive">
 
 						<li><a href="{% url 'login' %}" class="current">Вход</a></li>
 						<li><a href="{% url 'register' %}" class="current">Регистрация</a></li>
 					</ul>
+					{% endif %}
 				</nav>
 				<div class="clearfix"></div>
 

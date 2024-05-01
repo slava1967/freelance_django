@@ -27,10 +27,17 @@
                     <div class="dashboard-nav-inner">
 
                         <ul data-submenu-title="Start">
-                            <li><a href="{% url 'user_role' user.role %}"><i
+                            {% if user.role == 'freelancer' %}
+                            <li><a href="{% url 'freelancer' %}"><i
                                     class="icon-material-outline-dashboard"></i>
                                 Личный кабинет</a>
                             </li>
+                            {% elif user.role == 'customer' %}
+                            <li><a href="{% url 'customer' %}"><i
+                                    class="icon-material-outline-dashboard"></i>
+                                Личный кабинет</a>
+                            </li>
+                            {% endif %}
                             <li><a href="dashboard-messages.html"><i class="icon-material-outline-question-answer"></i>
                                 Messages <span class="nav-tag">2</span></a></li>
                             <li><a href="dashboard-bookmarks.html"><i class="icon-material-outline-star-border"></i>
@@ -58,11 +65,6 @@
                                     <li><a href="dashboard-post-a-task.html">Post a Task</a></li>
                                 </ul>
                             </li>
-                        </ul>
-
-                        <ul>
-                            <li><a href="{% url 'home' %}"><i class="icon-material-outline-power-settings-new"></i>
-                                Выход</a></li>
                         </ul>
 
                     </div>
