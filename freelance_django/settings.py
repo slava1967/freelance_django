@@ -22,15 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
-# SECRET_KEY = "django-insecure-c=6jwt_3yvlbmwg=9b6q10of%&t+8_9@047_fl1vo1c3j-6m^7"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
 
 DEBUG = bool(os.environ.get("DEBUG", default=0))
 
-# ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # Application definition
@@ -87,12 +83,6 @@ DATABASES = {
         "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
         "HOST": os.environ.get("SQL_HOST"),
         "PORT": os.environ.get("SQL_PORT"),
-        # "ENGINE": "django.db.backends.postgresql",
-        # "HOST": "127.0.0.1",
-        # "PORT": 5432,
-        # "NAME": "postgres",
-        # "USER": "postgres",
-        # "PASSWORD": "Trans678",
     }
 }
 
