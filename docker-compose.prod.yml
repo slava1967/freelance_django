@@ -23,7 +23,8 @@ services:
       - postgres_data:/var/lib/postgresql/data/
 
   nginx:
-    build: ./nginx
+    build:
+      context: ./nginx
     volumes:
       - static_volume:/home/app/web/staticfiles
     ports:
