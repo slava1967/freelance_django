@@ -25,6 +25,9 @@ services:
   nginx:
     build:
       context: ./nginx
+      cache_from:
+        - "${WEB_IMAGE}"
+    image: "${WEB_IMAGE}"
     volumes:
       - static_volume:/home/app/web/staticfiles
     ports:
