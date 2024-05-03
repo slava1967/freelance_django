@@ -65,18 +65,5 @@ def customer(request):
     return render(request, "users/customer.html", {"title": "Личный кабинет клиента"})
 
 
-# def get_user_role(request, user_role):
-#     if user_role == "freelancer":
-#         return render(
-#             request, "users/freelancer.html", {"title": "Личный кабинет фрилансера"}
-#         )
-#     elif user_role == "customer":
-#         return render(
-#             request, "users/customer.html", {"title": "Личный кабинет клиента"}
-#         )
-# else:
-#     return render(request, "admin/login/base.html")
-
-
 def profile(request):
     return render(request, "users/profile.html", {"title": "Профиль"})
