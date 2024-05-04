@@ -74,11 +74,11 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          scp  -o StrictHostKeyChecking=no -r ./.env ./docker-compose.prod.yml root@${{ secrets.IP_ADDRES }}:/app
+          scp  -o StrictHostKeyChecking=no -r ./.env ./docker-compose.yml root@${{ secrets.IP_ADDRES }}:/app
           ssh -o StrictHostKeyChecking=no root@${{ secrets.IP_ADDRES }} << 'ENDSSH'
             cd /app
             source .env
             docker login ghcr.io -u $NAMESPACE -p $PERSONAL_ACCESS_TOKEN
             docker pull $WEB_IMAGE
-            docker compose -f docker-compose.prod.yml up -d
+            docker compose -f docker-compose.yml up -d
           ENDSSH
