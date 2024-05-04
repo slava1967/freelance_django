@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = bool(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['wanafun.ru']
 
 # Application definition
 
@@ -128,4 +128,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
 
-CSRF_TRUSTED_ORIGINS = ['.localhost', '127.0.0.1', '[::1]']
+CSRF_TRUSTED_ORIGINS = ['http://wanafun.ru']
