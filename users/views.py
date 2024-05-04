@@ -2,7 +2,7 @@
 from django.contrib.auth import authenticate, login as dj_login
 from django.shortcuts import redirect, render
 
-from app.users.forms import RegisterForm, LoginForm
+from users.forms import RegisterForm, LoginForm
 
 
 def register(request):
