@@ -2,7 +2,7 @@
 from django.contrib.auth import authenticate, login as dj_login
 from django.shortcuts import redirect, render
 
-from users.forms import RegisterForm, LoginForm
+from app.users.forms import RegisterForm, LoginForm
 
 
 def register(request):
@@ -63,19 +63,6 @@ def freelancer(request):
 
 def customer(request):
     return render(request, "users/customer.html", {"title": "Личный кабинет клиента"})
-
-
-# def get_user_role(request, user_role):
-#     if user_role == "freelancer":
-#         return render(
-#             request, "users/freelancer.html", {"title": "Личный кабинет фрилансера"}
-#         )
-#     elif user_role == "customer":
-#         return render(
-#             request, "users/customer.html", {"title": "Личный кабинет клиента"}
-#         )
-# else:
-#     return render(request, "admin/login/base.html")
 
 
 def profile(request):
