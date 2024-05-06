@@ -3,6 +3,16 @@
 http://wanafun.ru/
 ```
 
+### Регистрация:
+```
+http://wanafun.ru/register/
+```
+
+### Вход:
+```
+http://wanafun.ru/login/
+```
+
 ## Созданы админ и 2 пользователя:
 
 ### Админ:
