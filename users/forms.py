@@ -2,9 +2,6 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
-# from users.models import User
-
-
 User = get_user_model()
 
 
@@ -22,9 +19,12 @@ class LoginForm(forms.Form):
 
 
 class RegisterForm(UserCreationForm):
-    role = forms.ChoiceField(choices=User.CHOICES,
-                             widget=forms.RadioSelect(),
-                             )
+    role = forms.ChoiceField(choices=[
+        ('freelancer', 'Фрилансер'),
+        ('customer', 'Клиент'),
+    ],
+        widget=forms.RadioSelect(),
+    )
     username = forms.CharField(
         widget=forms.TextInput(
             attrs={'placeholder': 'Имя пользователя'}
